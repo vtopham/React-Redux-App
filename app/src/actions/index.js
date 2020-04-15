@@ -9,8 +9,9 @@ export const getPicture = () => dispatch => {
     axios.get('https://randomfox.ca/floof/')
         .then(res => {
             console.log(res)
+            dispatch({type: FETCH_PICTURE_SUCCESS, payload: res.data.image})
         })
         .catch(err => {
-            console.log(err)
+            dispatch({type: FETCH_PICTURE_FAIL})
         })
 }

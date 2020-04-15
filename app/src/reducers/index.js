@@ -24,11 +24,13 @@ export const reducer = (state = defaultState, action) => {
         case FETCH_PICTURE_FAIL:
             return {
                 ...state,
+                url: "",
                 isFetching: false
             }
         case FETCH_PICTURE_SUCCESS:
             return {
                 ...state,
+                url: action.payload,
                 isFetching: false
             }
         default: 
