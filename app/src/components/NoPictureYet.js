@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 
-const NoURL = styled.p`
+const NoURL = styled.div`
     height: 300px;
     width: 300px;
     text-align: center;

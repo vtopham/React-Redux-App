@@ -7,8 +7,11 @@ const defaultState = {
 
 export const reducer = (state = defaultState, action) => {
     switch(action.type) {
-        case (NEW_PICTURE): //when this action is dispatched, we want to replace the URL with the new URL from the payload
-            return state
+        case NEW_PICTURE: //when this action is dispatched, we want to replace the URL with the new URL from the payload
+            return {
+                ...state,
+                url: action.payload
+            }
         default: 
             return state
     }
