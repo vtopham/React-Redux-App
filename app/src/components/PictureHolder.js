@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
+import SaveFavorite from './SaveFavorite'
+
 
 const FoxPic = styled.img `
     width: 50%;
@@ -15,11 +17,12 @@ const mapStateToProps = state => {
 }
 const PictureHolder = props => {
     return (
-        <>
-        <div>
-            <FoxPic src = {props.url} alt = "fox"/>
+        <div className = "pictureholder">
+            <div>
+                <FoxPic src = {props.url} alt = "fox"/>
+            </div>
+            <SaveFavorite />
         </div>
-        </>
     )
 }
 

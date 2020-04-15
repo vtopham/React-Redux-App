@@ -4,9 +4,12 @@ import { connect } from 'react-redux'
 
 import PictureHolder from './PictureHolder'
 import NoPictureYet from './NoPictureYet'
+import Favorites from './Favorites'
 
 import { newPicture } from '../actions/newPicture' //this is my test one
 import { getPicture } from '../actions/index' //this is the real deal
+
+
 
 
 const BigDiv = styled.div`
@@ -71,6 +74,7 @@ const FoxyPics = props => {
                 <p>These days, foxy pictures are in high demand. Here, we're giving them away for free! Press the button to receive a foxy picture today!</p>
                 {props.url === "" ? <NoPictureYet/> : <PictureHolder />}
                 <button onClick = {handleClick}>New Picture, Please!</button>
+                <Favorites/>
             </div>
         </BigDiv>
     )
