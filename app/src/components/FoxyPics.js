@@ -9,12 +9,43 @@ import { newPicture } from '../actions/newPicture' //this is my test one
 import { getPicture } from '../actions/index' //this is the real deal
 
 
-
-
-
 const BigDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    h1 {
+        background: peachpuff;
+        padding: 2%;
+    }
 
+    .body {
+        width: 75%;
+        
+
+        p {
+            font-style: italic;
+            margin: 4% 0;
+            
+        }
+
+        button {
+            height: 60px;
+            width: 150px;
+            margin: 2%;
+            background: #6495ed;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+
+            &:hover {
+                background: white;
+                border: 1px solid #6495ed;
+                color: #6495ed;
+            }
+            
+        }
+    }
 
 `
 
@@ -36,10 +67,11 @@ const FoxyPics = props => {
     return (
         <BigDiv>
             <h1>Foxy pictures, get your foxy pictures here!</h1>
-            <p>These days, foxy pictures are in high demand.</p>
-            <p> Here, we're giving them away for free! Press the button to receive a foxy picture today!</p>
-            {props.url === "" ? <NoPictureYet/> : <PictureHolder />}
-            <button onClick = {handleClick}>New Picture, Please!</button>
+            <div className = "body">
+                <p>These days, foxy pictures are in high demand. Here, we're giving them away for free! Press the button to receive a foxy picture today!</p>
+                {props.url === "" ? <NoPictureYet/> : <PictureHolder />}
+                <button onClick = {handleClick}>New Picture, Please!</button>
+            </div>
         </BigDiv>
     )
 }
