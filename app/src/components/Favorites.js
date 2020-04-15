@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const PicDiv = styled.div`
     img {
         width: 37.5%;
+        margin: 2%;
     }
 
 `
