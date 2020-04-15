@@ -1,12 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import axios from 'axios'
 
 import PictureHolder from './PictureHolder'
 import NoPictureYet from './NoPictureYet'
 
-import { newPicture } from '../actions/newPicture'
+import { newPicture } from '../actions/newPicture' //this is my test one
+import { getPicture } from '../actions/index' //this is the real deal
+
+
+
+
 
 const BigDiv = styled.div`
 
@@ -25,8 +29,8 @@ const FoxyPics = props => {
 
     const handleClick = event => {
         event.preventDefault()
-
-        props.newPicture("https://images.unsplash.com/photo-1462953491269-9aff00919695?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
+        props.getPicture()
+        // props.newPicture("https://images.unsplash.com/photo-1462953491269-9aff00919695?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
     }
 
     return (
@@ -40,4 +44,4 @@ const FoxyPics = props => {
     )
 }
 
-export default connect(mapStateToProps, {newPicture})(FoxyPics)
+export default connect(mapStateToProps, {newPicture, getPicture})(FoxyPics)

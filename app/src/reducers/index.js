@@ -1,8 +1,11 @@
 import { NEW_PICTURE } from '../actions/newPicture.js'
+import { FETCH_PICTURE_START, FETCH_PICTURE_FAIL, FETCH_PICTURE_SUCCESS } from '../actions/index.js'
 
 const defaultState = {
     url: "",
-    replacementText: "Press the button to see something foxy."
+    replacementText: "Press the button to see something foxy.",
+    isFetching: false,
+    error: ''
 }
 
 export const reducer = (state = defaultState, action) => {
@@ -11,6 +14,22 @@ export const reducer = (state = defaultState, action) => {
             return {
                 ...state,
                 url: action.payload
+            }
+        case FETCH_PICTURE_START:
+            return {
+                ...state,
+                isFetching: true,
+                error: ''
+            }
+        case FETCH_PICTURE_FAIL:
+            return {
+                ...state,
+                isFetching: false
+            }
+        case FETCH_PICTURE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false
             }
         default: 
             return state
