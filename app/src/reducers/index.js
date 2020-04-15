@@ -2,7 +2,7 @@ import { NEW_PICTURE } from '../actions/newPicture.js'
 
 const defaultState = {
     url: "",
-    replacementText: "Press the button to see something foxy!"
+    replacementText: "Press the button to see something foxy."
 }
 
 export const reducer = (state = defaultState, action) => {
