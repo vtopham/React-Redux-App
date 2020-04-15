@@ -9,7 +9,7 @@ import { createStore } from 'redux'
 import { reducer } from './reducers/index.js'
 
 
-const store = createStore(reducer)
+const store = createStore(reducer) //set up the store so that we can access state globally. Thanks, redux!
 
 ReactDOM.render(
   <Provider store = {store}>
