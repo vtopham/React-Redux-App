@@ -5,11 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { reducer } from './reducers/index.js'
+import thunk from 'redux-thunk'
 
 
-const store = createStore(reducer) //set up the store so that we can access state globally. Thanks, redux!
+const store = createStore(reducer, applyMiddleware(thunk)) //set up the store so that we can access state globally. Thanks, redux!
 
 ReactDOM.render(
   <Provider store = {store}>

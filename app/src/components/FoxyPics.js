@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import axios from 'axios'
 
 import PictureHolder from './PictureHolder'
 import NoPictureYet from './NoPictureYet'
@@ -24,10 +25,10 @@ const FoxyPics = props => {
 
     const handleClick = event => {
         event.preventDefault()
-        props.newPicture("https://static1.squarespace.com/static/591d131d17bffc24f111e867/59769462e6f2e1dd13d28810/5cfaf0d7d316ce00010a677e/1559949875755/Loki_6.jpg?format=1500w")
+
+        props.newPicture("https://images.unsplash.com/photo-1462953491269-9aff00919695?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
     }
 
-    console.log(props.url)
     return (
         <BigDiv>
             <h1>Foxy pictures, get your foxy pictures here!</h1>
